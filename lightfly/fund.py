@@ -1,0 +1,2 @@
+class Fund:
+    pass
