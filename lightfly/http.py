@@ -11,7 +11,7 @@ class Client(object):
     def __init__(self, app_id='', app_secret_key=''):
         self.app_id = app_id
         self.app_secret_key = app_secret_key
-        self.base_url = 'http://localhost:8000'
+        self.base_url = 'http://129.211.11.159'
 
     def get(self, path_info, params={}):
 
