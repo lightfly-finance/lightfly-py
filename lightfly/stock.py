@@ -23,20 +23,20 @@ class Stock(object):
 
         return pd.read_csv(StringIO(content), index_col=0, header=0, parse_dates=True)
 
-    def stock_realtime(self, symbol):
+    def stock_realtime(self, symbols):
         path_info = '/api/stock/realtime'
         content = self.http_client.get(path_info, {
-            'symbol': symbol
+            'symbols': symbols
         })
         return pd.read_csv(StringIO(content), index_col=0, header=0, parse_dates=True)
 
     def hgs_trade_realtime(self):
         path_info = '/api/stock/hgs/trade/realtime'
-        content = self.http_client(path_info)
+        content = self.http_client.get(path_info, {})
 
-        return pd.read_csv(StringIO(content), index_col=0, header=0)
+        return pd.read_csv(StringIO(content), header=0)
 
     def hgtong_top10(self):
         path_info = '/api/stock/hgtong/top10'
-        content = self.http_client(path_info)
+        content = self.http_client.get(path_info, {})
         return pd.read_csv(StringIO(content), index_col=0, header=0)

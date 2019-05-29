@@ -4,6 +4,7 @@ import requests
 import hashlib
 from datetime import datetime
 from .exception import AuthException
+from .exception import BadRequestException
 
 
 class Client(object):
@@ -27,6 +28,9 @@ class Client(object):
             "X-App-Id": self.app_id,
             "X-Token": token,
         })
+
+        if r.status_code == 400:
+            raise BadRequestException(r.text)
 
         if r.status_code != 200:
             raise AuthException(r.text)
