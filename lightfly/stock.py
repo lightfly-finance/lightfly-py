@@ -40,3 +40,60 @@ class Stock(object):
         path_info = '/api/stock/hgtong/top10'
         content = self.http_client.get(path_info, {})
         return pd.read_csv(StringIO(content), index_col=0, header=0)
+
+    def sgtong_top10(self):
+        path_info = '/api/stock/sgtong/top10'
+        content = self.http_client.get(path_info, {})
+        return pd.read_csv(StringIO(content), index_col=0, header=0)
+
+    def ggtong_top10(self):
+        path_info = '/api/stock/ggtong/top10'
+        content = self.http_client.get(path_info, {})
+        return pd.read_csv(StringIO(content), index_col=0, header=0)
+
+    def stock_index(self):
+        path_info = '/api/stock/index'
+        content = self.http_client.get(path_info, {})
+        return pd.read_csv(StringIO(content), index_col=0, header=0)
+
+    def sh_index_component(self):
+        path_info = '/api/stock/component/shindex'
+        content = self.http_client.get(path_info, {})
+        return pd.read_csv(StringIO(content), index_col=0, header=0)
+
+    def sh_consumption_index_component(self):
+        path_info = '/api/stock/component/shconsumptionindex'
+        content = self.http_client.get(path_info, {})
+        return pd.read_csv(StringIO(content), index_col=0, header=0)
+
+    def sh50_index_component(self):
+        path_info = '/api/stock/component/sh50index'
+        content = self.http_client.get(path_info, {})
+        return pd.read_csv(StringIO(content), index_col=0, header=0)
+
+    def sh_medicine_index_component(self):
+        path_info = '/api/stock/component/shmedicineindex'
+        content = self.http_client.get(path_info, {})
+        return pd.read_csv(StringIO(content), index_col=0, header=0)
+
+    def sz_index_component(self):
+        path_info = '/api/stock/component/szindex'
+        content = self.http_client.get(path_info, {})
+        return pd.read_csv(StringIO(content), index_col=0, header=0)
+
+    def sz_composite_index_component(self):
+        path_info = '/api/stock/component/szcompositeindex'
+        content = self.http_client.get(path_info, {})
+        return pd.read_csv(StringIO(content), index_col=0, header=0)
+
+    def zz500_index_component(self):
+        path_info = '/api/stock/component/zz500index'
+        content = self.http_client.get(path_info, {})
+        return pd.read_csv(StringIO(content), index_col=0, header=0)
+
+    def indicator_main(self, symbol):
+        path_info = '/api/stock/indicator/main'
+        content = self.http_client.get(path_info, {
+            symbol: symbol
+        })
+        return pd.read_csv(StringIO(content), index_col=0, header=0)
