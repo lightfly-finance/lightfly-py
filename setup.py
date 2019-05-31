@@ -5,7 +5,7 @@ with open("DESCRIPTION", "r") as fh:
 
 setuptools.setup(
     name="lightfly",
-    version="0.1.0",
+    version="0.1.1",
     author="Weinan Tang",
     author_email="twn39@163.com",
     description="a finance platform for china.",
