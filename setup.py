@@ -5,10 +5,15 @@ with open("DESCRIPTION", "r") as fh:
 
 setuptools.setup(
     name="lightfly",
-    version="0.1.1",
+    version="0.1.2",
     author="Weinan Tang",
+    license="GPLv3",
     author_email="twn39@163.com",
-    description="a finance platform for china.",
+    description="A finance platform for china.",
+    install_requires=[
+        'requests>=2.0',
+        'pandas >= 0.20'
+    ],
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/pypa/sampleproject",
