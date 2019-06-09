@@ -94,6 +94,40 @@ class Stock(object):
     def indicator_main(self, symbol):
         path_info = '/api/stock/indicator/main'
         content = self.http_client.get(path_info, {
-            symbol: symbol
+            'symbol': symbol
         })
-        return pd.read_csv(StringIO(content), index_col=0, header=0)
+        data = pd.read_csv(StringIO(content), index_col=0, header=0)
+        data = data.T.dropna()
+        data.index = pd.to_datetime(data.index)
+        return data
+
+    def profitability(self, symbol):
+        path_info = '/api/stock/indicator/profitability'
+        content = self.http_client.get(path_info, {
+            'symbol': symbol
+        })
+        data = pd.read_csv(StringIO(content), index_col=0, header=0)
+        data = data.T.dropna()
+        data.index = pd.to_datetime(data.index)
+        return data
+
+    def solvency(self, symbol):
+        path_info = '/api/stock/indicator/solvency'
+        content = self.http_client.get(path_info, {
+            'symbol': symbol
+        })
+        data = pd.read_csv(StringIO(content), index_col=0, header=0)
+        data = data.T.dropna()
+        data.index = pd.to_datetime(data.index)
+        return data
+
+    def growth_ability(self, symbol):
+        path_info = '/api/stock/indicator/growthability'
+        content = self.http_client.get(path_info, {
+            'symbol': symbol
+        })
+        data = pd.read_csv(StringIO(content), index_col=0, header=0)
+        data = data.T.dropna()
+        data.index = pd.to_datetime(data.index)
+        return data
+

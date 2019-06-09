@@ -101,15 +101,28 @@ def test_zz500_index_component():
     assert len(data.index) > 0
 
 
-# def test_indicator_main():
-#     data = stock.indicator_main('002142')
-#     assert DataFrame == type(data)
-#     assert len(data.index) > 0
+def test_indicator_main():
+    data = stock.indicator_main('002142')
+    assert DataFrame == type(data)
+    assert len(data.index) > 0
 
 
+def test_profitability():
+    data = stock.profitability('002142')
+    assert DataFrame == type(data)
+    assert len(data.index) > 0
 
 
+def test_solvency():
+    data = stock.solvency('002142')
+    assert DataFrame == type(data)
+    assert len(data.index) > 0
 
+
+def test_growth_ability():
+    data = stock.growth_ability('002142')
+    assert DataFrame == type(data)
+    assert len(data.index) > 0
 
 
 
