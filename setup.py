@@ -5,7 +5,7 @@ with open("DESCRIPTION", "r") as fh:
 
 setuptools.setup(
     name="lightfly",
-    version="0.1.2",
+    version="0.1.3",
     author="Weinan Tang",
     license="GPLv3",
     author_email="twn39@163.com",
