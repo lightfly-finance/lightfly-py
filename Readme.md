@@ -14,9 +14,13 @@
 from lightfly.stock import Stock
 from lightfly.http import Client
 
-http_client = Client(app_id='xxx', app_secret_key='xxx')
+http_client = Client(app_id='xxx', secret_key='xxx')
 stock = Stock(http_client)
 data = stock.hs300()
 print(data)
 
 ```
+
+## 文档
+
+[文档](https://www.yuque.com/twn39/bb3s7k)
