@@ -20,6 +20,7 @@ class Stock(object):
             'date_from': date_from,
             'date_to': date_to,
             'symbol': symbol,
+            'lang': 'en'
         })
 
         return pd.read_csv(StringIO(content), index_col=0, header=0, parse_dates=True)
