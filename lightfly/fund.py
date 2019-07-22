@@ -32,14 +32,10 @@ class Fund(object):
         })
         return json.loads(content)
 
-    # 数据有问题，数值过大会包含额外的逗号
-    # def stocks_holding(self, symbol):
-    #     path_info = '/api/fund/stocks/holding'
-    #     content = self.http_client.get(path_info, {
-    #         'symbol': symbol
-    #     })
-    #
-    #     print(content)
-    #     exit(1)
-    #
-    #     return pd.read_csv(StringIO(content), header=0)
+    def stocks_holding(self, symbol):
+        path_info = '/api/fund/stocks/holding'
+        content = self.http_client.get(path_info, {
+            'symbol': symbol
+        })
+
+        return pd.read_csv(StringIO(content), header=0, sep='|')
