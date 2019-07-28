@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 import pandas as pd
-from pandas.compat import StringIO
+import sys
 import json
+if sys.version_info >= (3, 0):
+    from io import StringIO
+else:
+    from pandas.compat import StringIO
 
 
 class Fund(object):
